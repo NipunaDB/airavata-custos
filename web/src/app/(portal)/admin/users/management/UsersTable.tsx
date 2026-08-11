@@ -89,15 +89,6 @@ export function UsersTable({
   }
   const selectedUser = users.find((user) => user.id === selectedId) ?? null;
 
-  function roleLabelFor(value: string): string {
-    if (value === "all") return "All roles";
-    return rolesCatalog.find((role) => role.id === value)?.name ?? value;
-  }
-
-  function identityLabelFor(value: string): string {
-    return value === "all" ? "All external identities" : identitySourceLabel(value);
-  }
-
   function resetSelection() {
     setSelectedId(null);
     expandedRow.clear();
